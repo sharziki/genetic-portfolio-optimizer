@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="dna" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="#0a0c0f"/>
+  <path d="M30 20 Q50 35 70 20 Q50 50 70 50 Q50 65 30 50 Q50 50 30 80 Q50 65 70 80"
+        stroke="url(#dna)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <line x1="35" y1="30" x2="65" y2="30" stroke="#22c55e" stroke-width="3" opacity="0.6"/>
+  <line x1="40" y1="50" x2="60" y2="50" stroke="#22c55e" stroke-width="3" opacity="0.6"/>
+  <line x1="35" y1="70" x2="65" y2="70" stroke="#22c55e" stroke-width="3" opacity="0.6"/>
+</svg>
