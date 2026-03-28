@@ -96,11 +96,14 @@ function App() {
   const currentPopulation = currentStats?.population || [];
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--background))] p-6">
+    <div className="min-h-screen bg-[hsl(var(--background))]">
+      {/* Header */}
+      <header className="border-b border-[hsl(var(--border))] bg-[hsl(var(--card))]">
+        <div className="max-w-7xl mx-auto px-6 py-6">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-6">
             <div className="p-2 rounded-lg bg-[hsl(var(--primary))] bg-opacity-20">
               <Dna className="w-8 h-8 text-[hsl(var(--primary))]" />
             </div>
@@ -113,11 +116,11 @@ function App() {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-6">
             <button
               onClick={runOptimization}
               disabled={isRunning}
-              className="flex items-center gap-2 px-4 py-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-lg font-medium hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center gap-6 px-4 py-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-lg font-medium hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Play className="w-4 h-4" />
               {isRunning ? 'Running...' : 'Optimize'}
@@ -126,13 +129,13 @@ function App() {
               <>
                 <button
                   onClick={toggleAnimation}
-                  className="flex items-center gap-2 px-3 py-2 bg-[hsl(var(--secondary))] text-[hsl(var(--foreground))] rounded-lg hover:bg-[hsl(var(--accent))] transition-colors"
+                  className="flex items-center gap-6 px-3 py-2 bg-[hsl(var(--secondary))] text-[hsl(var(--foreground))] rounded-lg hover:bg-[hsl(var(--accent))] transition-colors"
                 >
                   {isAnimating ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                 </button>
                 <button
                   onClick={reset}
-                  className="flex items-center gap-2 px-3 py-2 bg-[hsl(var(--secondary))] text-[hsl(var(--foreground))] rounded-lg hover:bg-[hsl(var(--accent))] transition-colors"
+                  className="flex items-center gap-6 px-3 py-2 bg-[hsl(var(--secondary))] text-[hsl(var(--foreground))] rounded-lg hover:bg-[hsl(var(--accent))] transition-colors"
                 >
                   <RotateCcw className="w-4 h-4" />
                 </button>
@@ -152,12 +155,12 @@ function App() {
         />
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left Column - Controls */}
           <div className="space-y-6">
             {/* Basic Parameters */}
-            <div className="bg-[hsl(var(--card))] rounded-xl border border-[hsl(var(--border))] p-6 space-y-5">
-              <div className="flex items-center gap-2">
+            <div className="bg-[hsl(var(--card))] rounded-2xl border border-[hsl(var(--border))] p-6 space-y-5">
+              <div className="flex items-center gap-6">
                 <Settings className="w-5 h-5 text-[hsl(var(--muted-foreground))]" />
                 <h2 className="text-lg font-semibold text-[hsl(var(--foreground))]">
                   GA Parameters
@@ -224,7 +227,7 @@ function App() {
               {/* Advanced Toggle */}
               <button
                 onClick={() => setShowAdvanced(!showAdvanced)}
-                className="flex items-center gap-2 text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"
+                className="flex items-center gap-6 text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"
               >
                 {showAdvanced ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 Advanced Options
@@ -305,7 +308,7 @@ function App() {
           </div>
 
           {/* Right Column - Charts */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className=" space-y-6">
             {/* Efficient Frontier */}
             <EfficientFrontierChart
               population={currentPopulation}
